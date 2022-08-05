@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :badges
+  resources :activities
+  resources :users
   namespace :api do
     resources :recipes, only: [:index, :create]
     post "/signup", to: "users#create"
