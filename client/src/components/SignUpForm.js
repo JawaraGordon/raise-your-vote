@@ -14,14 +14,14 @@ function SignUpForm({ onLogin }) {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    fetch("/api/signup", {
+    fetch("/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        username,
-        password,
+        name: username,
+        password_digest: password,
         password_confirmation: passwordConfirmation,
         image_url: imageUrl,
         bio,

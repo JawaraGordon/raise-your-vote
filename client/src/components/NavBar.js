@@ -6,7 +6,8 @@ import Raise_Your_Vote_Logo from '../img/Raise_Your_Vote_Logo.png';
 
 function NavBar({ user, setUser }) {
   function handleLogoutClick() {
-    fetch('/api/logout', { method: 'DELETE' }).then((r) => {
+    
+    fetch('/logout', { method: 'DELETE' }).then((r) => {
       if (r.ok) {
         setUser(null);
       }

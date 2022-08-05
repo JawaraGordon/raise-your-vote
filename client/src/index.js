@@ -64,7 +64,8 @@ const GlobalStyle = createGlobalStyle`
 }
 
 .card-text {
-  margin-bottom: 3rem;
+  margin: 1rem;
+
 
 }
 

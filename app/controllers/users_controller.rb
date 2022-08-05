@@ -3,29 +3,34 @@ class UsersController < ApplicationController
 
     def index 
         render json: User.all
-    end
+    end 
 
-    def show 
-        user = User.find_by(id:params[:id])
-        if user 
-            render json: user
-            # , serializer: UserActivitiesSerializer
-        else 
-            render json: {error: "No user found"}
-    end
-end
+    def show
+        current_user = User.find_by(id: session[:current_user])
+        render json: current_user
+    end 
 
     def create
-        user = User.create(user_params)
-        if user.valid?
-            render json: user, status: :created
-        else 
-            render json: {error: ["validation errors"]}, status: :unprocessable_entity
-    end
-end
+        user = User.create!(user_params)
+        render json: user, status: :created
+    end 
 
-    private
-    def user
-        params.permit(:username, :password, :image_url, :bio, :age)  
+    def update
+        user = User.find(params[:id])
+        user.update!(user_params)
+        render json: user, status: :created
     end
+
+    def destroy
+        user = User.find(params[:id])
+        user.destroy
+        head :no_content
+    end
+
+    private 
+
+    def user_params
+        params.permit(:username, :password, :image_url, :bio)
+    end 
+
 end

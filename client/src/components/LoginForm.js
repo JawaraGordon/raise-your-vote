@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import Login from '../pages/Login'
+import Login from './Login'
 import { Button, Error, Input, FormField, Label } from "../styles";
 
 function LoginForm({ onLogin, setUser }) {
@@ -12,18 +12,18 @@ function LoginForm({ onLogin, setUser }) {
   function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
-    fetch("/api/login", {
+    fetch("/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ username, password }),
-    }).then((r) => {
+    }).then((resp) => {
       setIsLoading(false);
-      if (r.ok) {
-        r.json().then((user) => onLogin(user));
+      if (resp.ok) {
+        resp.json().then((user) => onLogin(user));
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        resp.json().then((err) => setErrors(err.errors));
       }
     });
   }

@@ -1,7 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import LoginForm from "../components/LoginForm";
-import SignUpForm from "../components/SignUpForm";
+import LoginForm from "./LoginForm";
+import SignUpForm from "./SignUpForm";
 import { Button } from "../styles";
 import Raise_Your_Vote_Logo from '../img/Raise_Your_Vote_Logo.png';
 
