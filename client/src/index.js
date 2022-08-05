@@ -41,6 +41,13 @@ const GlobalStyle = createGlobalStyle`
     padding: auto;
     justify-content: center;
 }
+.user-button {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: auto;
+    justify-content: center;
+}
  
 
 .card-title {

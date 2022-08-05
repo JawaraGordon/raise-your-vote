@@ -9,7 +9,7 @@ function Badges() {
   // const [badges, setBadges] = useState([]);
 
   // useEffect(() => {
-  //   fetch("/api/badges")
+  //   fetch("/badges")
   //     .then((r) => r.json())
   //     .then(setBadges);
   // }, []);

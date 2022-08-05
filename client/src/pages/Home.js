@@ -19,15 +19,6 @@ function Home({setUser}) {
       .then(setBadge);
   }, []);
 
-//   function editMode(id) {
-//     setUserId(id);
-//   }
-
-//   function handleEdit() {
-//     editMode(id);
-//     history.push(`/edituserform/${id}`);
-//   }
-
 
   return (
     <Wrapper>
