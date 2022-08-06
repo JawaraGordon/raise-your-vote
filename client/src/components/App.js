@@ -9,26 +9,27 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    
-    fetch('/authorized_user').then((resp) => {
+  
+    fetch("/api/me").then((resp) => {
       if (resp.ok) {
         resp.json().then((user) => setUser(user));
       }
     });
   }, []);
 
+
   if (!user) return <Login onLogin={setUser} />;
 
   return (
     <>
       <NavBar user={user} setUser={setUser} />
-      <div>
+      <main>
         <Switch>
           <Route path="/">
             <Home setUser={setUser}/>
           </Route>
         </Switch>
-        </div>
+        </main>
     </>
   );
 }

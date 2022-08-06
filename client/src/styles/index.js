@@ -7,7 +7,9 @@ import Textarea from "./Textarea";
 import Error from "./Error";
 import Logo from "./Logo";
 import LogoImg from "./LogoImg";
+import Nav from "./Nav";
 import Wrapper from "./Wrapper";
+import NavWrapper from "./NavWrapper";
 
 
-export { Box, Button, Error, FormField, Input, Label, Logo, LogoImg, Textarea,Wrapper };
+export { Box, Button, Error, FormField, Input, Label, Logo, LogoImg, Nav, Textarea,NavWrapper, Wrapper };

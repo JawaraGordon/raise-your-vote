@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Route, Switch, Link, useHistory } from "react-router-dom";
-import styled from "styled-components";
 import { Box, Wrapper} from "../styles";
 import Activities from "./Activities";
 import User from "./User";

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import Login from './Login'
 import { Button, Error, Input, FormField, Label } from "../styles";
 
-function LoginForm({ onLogin, setUser }) {
+function LoginForm({ onLogin }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -12,7 +11,7 @@ function LoginForm({ onLogin, setUser }) {
   function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
-    fetch("/login", {
+    fetch("/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,9 +55,9 @@ function LoginForm({ onLogin, setUser }) {
         <Button variant="fill" color="primary" type="submit">
           {isLoading ? "Loading..." : "Login"}
         </Button>
-        <Button color="primary" onClick={{setUser}}>
+        <Link to="/api/guest" className="link" onClick={() => {}}>
               Guest
-            </Button>
+            </Link>
       </FormField>
       <FormField>
         {errors.map((err) => (

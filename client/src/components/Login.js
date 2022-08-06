@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
-import { Button } from "../styles";
+import { Button, Wrapper } from "../styles";
 import Raise_Your_Vote_Logo from '../img/Raise_Your_Vote_Logo.png';
 
 function Login({ onLogin }) {
@@ -23,8 +22,6 @@ function Login({ onLogin }) {
             <Button color="secondary" onClick={() => setShowLogin(false)}>
               Sign Up
             </Button> 
-            
-            
           </p>
         </>
       ) : (
@@ -43,13 +40,5 @@ function Login({ onLogin }) {
   
   );
 }
-
-
-
-const Wrapper = styled.section`
-  max-width: 500px;
-  margin: 40px auto;
-  padding: 16px;
-`;
 
 export default Login;

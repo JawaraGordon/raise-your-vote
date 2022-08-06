@@ -7,6 +7,7 @@ function SignUpForm({ onLogin }) {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [bio, setBio] = useState("");
+  const [age, setAge] = useState();
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -14,23 +15,25 @@ function SignUpForm({ onLogin }) {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
-    fetch("/signup", {
+    fetch("/api/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: username,
-        password_digest: password,
+        username,
+        password,
         password_confirmation: passwordConfirmation,
         image_url: imageUrl,
         bio,
+        age
       })
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((user) => onLogin(user));
-      } else {
+      } 
+      else {
         r.json().then((err) => setErrors(err.errors));
       }
     });
@@ -85,6 +88,17 @@ function SignUpForm({ onLogin }) {
           value={bio}
           onChange={(e) => setBio(e.target.value)}
         />
+      </FormField>
+      <FormField>
+        <Label htmlFor="age">Age</Label>
+        {/* <Textarea/> */}
+        <input
+          type="number"
+          id="age"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+          />
+        
       </FormField>
       <FormField>
         <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>

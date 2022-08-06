@@ -58,7 +58,7 @@ const GlobalStyle = createGlobalStyle`
 
 
 .card-img{
-  width: 80%;
+  width: 100%;
   height: 100%;
   border-radius: 20%;
 }
@@ -82,6 +82,21 @@ const GlobalStyle = createGlobalStyle`
   height: auto;
   margin: auto;
   
+}
+
+.link {
+  font-family: 'Helvetica Neue',Helvetica;
+  cursor: pointer;
+  font-size: 1rem;
+  width: auto;
+  height: auto;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: .5rem 1.5rem;
+  margin: 2rem;
+  text-decoration: none;
+  background-color: red;
+  color: white;
 }
 
 `;
