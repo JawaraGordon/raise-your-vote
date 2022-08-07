@@ -6,6 +6,11 @@ class Api::UsersController < ApplicationController
       session[:user_id] = user.id
       render json: user, status: :created
     end
+
+    def index
+      users = User.all
+        render json: users
+    end
   
     def show
       render json: @current_user
@@ -18,6 +23,13 @@ class Api::UsersController < ApplicationController
     rescue ActiveRecord::RecordInvalid => invalid
       render json: { errors: invalid.record.errors }, status: :unprocessable_entity
     end
+
+    def destroy
+       user = User.find(params[:id])
+        user.destroy
+        head :no_content
+    end
+
   
     private
   

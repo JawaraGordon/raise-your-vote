@@ -3,30 +3,19 @@ import { Link } from 'react-router-dom';
 import { Button, Wrapper} from "../styles";
 
 function Activities(user) {
-  const [activities, setActivities] = useState([]);
+  // const [activities, setActivities] = useState([]);
   // const history = useHistory();
 
-  useEffect(() => {
-    fetch("/activities")
-      .then((r) => r.json())
-      .then(setActivities);
-  }, []);
+  // useEffect(() => {
+  //   fetch("/activities")
+  //     .then((r) => r.json())
+  //     .then(setActivities);
+  // }, []);
   
   // function handleMakePlan() {
   //   history.push(`/makeaplan`);
   // }
 
-  function handleDeleteActivity(id) {
-    fetch(`/activities/${id}`, {
-      method: "DELETE",
-    }).then((r) => {
-      if (r.ok) {
-        setActivities((activities) =>
-          activities.filter((activity) => activity.id !== id)
-        );
-      }
-    });
-  }
 
   return (
     <>
@@ -44,18 +33,6 @@ function Activities(user) {
         <Link to="/raiseyourvote" className="link-primary" >Raise Your Vote</Link>
         </div>
         </div>
-      {/* <ul>
-        {activities.map((activity) => (
-          <li key={activity.id}>
-            <span>
-              {activity.name} | Difficulty: {activity.difficulty}
-            </span>
-            <button onClick={() => handleDeleteActivity(activity.id)}>
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul> */}
       
       </>
   );

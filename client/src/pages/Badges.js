@@ -2,7 +2,7 @@ import React,{ useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Box, Button, LogoImg } from "../styles";
+import { Box, Button, LogoImg, Wrapper } from "../styles";
 import badges from "../img/badges.png";
 
 function Badges() {
@@ -33,10 +33,6 @@ function Badges() {
   );
 }
 
-const Wrapper = styled.section`
-  max-width: 800px;
-  margin: 40px auto;
-`;
 
 
 export default Badges;

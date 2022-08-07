@@ -10,14 +10,14 @@ import Badges from "../pages/Badges";
 
 
 function Home({user}) {
-  const [badge, setBadge] = useState([]);
+  // const [badge, setBadge] = useState([]);
   const history = useHistory();
 
-  useEffect(() => {
-    fetch("/badges")
-      .then((r) => r.json())
-      .then(setBadge);
-  }, []);
+  // useEffect(() => {
+  //   fetch("/badges")
+  //     .then((r) => r.json())
+  //     .then(setBadge);
+  // }, []);
 
 
   return (

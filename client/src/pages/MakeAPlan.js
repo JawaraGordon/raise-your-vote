@@ -7,6 +7,10 @@ import makeaplan from "../img/makeaplan.png"
 function MakeAPlan() {
 
     const [isChecked, setIsChecked] = useState(false);
+
+
+
+    
   
 
   return (
