@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Button, FormField, Label, Wrapper } from "../styles";
+import { Link } from "react-router-dom";
+import { Button, FormField, Input, Label, Wrapper } from "../styles";
 import { useHistory } from 'react-router-dom';
 
 function EditUserForm({ user, setUser, onUpdate }) {
@@ -51,13 +52,13 @@ function EditUserForm({ user, setUser, onUpdate }) {
   return (
 
    <Wrapper>
-    <div className="container">
-    <section>
-      <form className="form" autoComplete="off" onSubmit={handleEdit}>
+    <div className="user-button">
+   
+      <form  autoComplete="off" onSubmit={handleEdit}>
         <h3>Edit Your Info</h3>
         <Label htmlFor="name">Name</Label>
         <FormField>
-        <input
+        <Input
           className="input-text"
           type="text"
           id="name"
@@ -69,7 +70,7 @@ function EditUserForm({ user, setUser, onUpdate }) {
         
         <Label htmlFor="image_url">Image Url</Label>
         <FormField>
-        <input
+        <Input
           className="input-text"
           id="image_url"
           name="image_url"
@@ -78,7 +79,7 @@ function EditUserForm({ user, setUser, onUpdate }) {
         /></FormField>
         <Label htmlFor="bio">Bio</Label>
         <FormField>
-        <input
+        <Input
           className="input-text"
           type="text"
           id="bio"
@@ -89,7 +90,7 @@ function EditUserForm({ user, setUser, onUpdate }) {
       </FormField>
       <Label htmlFor="bio">Age</Label>
         <FormField>
-        <input
+        <Input
           className="input-text"
           type="number"
           id="age"
@@ -98,11 +99,14 @@ function EditUserForm({ user, setUser, onUpdate }) {
           onChange={handleChange}
         />
       </FormField>
+        
         <Button onSubmit={handleEdit} type="submit">
           Update
         </Button>
+      <div className="user-button">
+        <Link className="link-primary" to={"/"}>Home</Link>
+      </div>
       </form>
-    </section>
     </div>
     </Wrapper>
   );

@@ -1,5 +1,6 @@
-class BadgesController < ApplicationController
-
+class Api::BadgesController < ApplicationController
+    skip_before_action :authorize, only: :index
+    
     def create
         badge = Badge.create(badge_params)
         render json: badge, status: :created

@@ -33,6 +33,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 16px;
     width: 100%;
     justify-content: center;
+    
 }
   .user-container {
     display: flex;
@@ -65,9 +66,13 @@ const GlobalStyle = createGlobalStyle`
 
 .card-text {
   margin: 1rem;
-
-
+  
 }
+
+.activity-img img{
+    justify-content: center;
+    width: 100%;
+  }
 
 .input{
   padding: 1rem;
@@ -84,6 +89,31 @@ const GlobalStyle = createGlobalStyle`
   
 }
 
+input[type="checkbox"] {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.checkbox {
+  display: inline-block; 
+  height: 50px;
+  width: 50px;
+  background: #fff;
+  border: 2px #ddd solid;
+  margin-right: 4px;
+}
+
+.checkbox--active {
+  border-color: #0085ff;
+  background: #0085ff;
+}
+
+
 .link-primary {
   font-family: 'Helvetica Neue',Helvetica;
   cursor: pointer;
@@ -95,6 +125,7 @@ const GlobalStyle = createGlobalStyle`
   padding: .5rem 1.5rem;
   margin: 2rem;
   text-decoration: none;
+  text-align: center;
   background-color: red;
   color: white;
 }
@@ -109,6 +140,7 @@ const GlobalStyle = createGlobalStyle`
   padding: .5rem 1.5rem;
   margin: 2rem;
   text-decoration: none;
+  text-align: center;
   background-color: blue;
   color: white;
 }
@@ -116,6 +148,10 @@ const GlobalStyle = createGlobalStyle`
 .form-field{
   font-size: 1rem;
   padding: 1rem;
+}
+
+.form {
+  align-items: center;
 }
 
 `;

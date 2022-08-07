@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import { Button, Error, Input, FormField, Label } from "../styles";
+import { Button, Error, Input, FormField, Label, Wrapper } from "../styles";
 
 function LoginForm({ onLogin }) {
   const [username, setUsername] = useState("");
@@ -30,8 +30,8 @@ function LoginForm({ onLogin }) {
 
 
   return (
-    
-    <form onSubmit={handleSubmit}>
+    <Wrapper>
+    <form className="user-button" onSubmit={handleSubmit}>
       <FormField>
         <Label htmlFor="username">Username</Label>
         <Input
@@ -68,6 +68,7 @@ function LoginForm({ onLogin }) {
         ))}
       </FormField>
     </form>
+    </Wrapper>
   );
 }
 
