@@ -20,6 +20,15 @@ function Badges() {
       <div className="logo-small">
             <img src={badges} alt="badges" />
           </div>
+          {/* <ul>
+        {badges.map((badge) => (
+          <li key={badge.id}>
+            <span>
+              {badge.image}
+            </span>
+          </li>
+        ))}
+      </ul> */}
     </Wrapper>
   );
 }

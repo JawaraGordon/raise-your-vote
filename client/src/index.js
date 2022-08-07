@@ -84,7 +84,7 @@ const GlobalStyle = createGlobalStyle`
   
 }
 
-.link {
+.link-primary {
   font-family: 'Helvetica Neue',Helvetica;
   cursor: pointer;
   font-size: 1rem;
@@ -98,13 +98,34 @@ const GlobalStyle = createGlobalStyle`
   background-color: red;
   color: white;
 }
+.link-secondary {
+  font-family: 'Helvetica Neue',Helvetica;
+  cursor: pointer;
+  font-size: 1rem;
+  width: auto;
+  height: auto;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: .5rem 1.5rem;
+  margin: 2rem;
+  text-decoration: none;
+  background-color: blue;
+  color: white;
+}
+
+.form-field{
+  font-size: 1rem;
+  padding: 1rem;
+}
 
 `;
 
 ReactDOM.render(
   <BrowserRouter>
+  <React.StrictMode>
     <GlobalStyle />
     <App />
+    </React.StrictMode>
   </BrowserRouter>,
   document.getElementById('root')
 );

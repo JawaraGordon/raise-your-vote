@@ -30,6 +30,7 @@ function LoginForm({ onLogin }) {
 
 
   return (
+    
     <form onSubmit={handleSubmit}>
       <FormField>
         <Label htmlFor="username">Username</Label>
@@ -55,10 +56,12 @@ function LoginForm({ onLogin }) {
         <Button variant="fill" color="primary" type="submit">
           {isLoading ? "Loading..." : "Login"}
         </Button>
-        <Link to="/api/guest" className="link" onClick={() => {}}>
+        {/* sends user to guest experience */}
+        <Link to="/guest" className="link-secondary" onClick={() => {}}>
               Guest
             </Link>
       </FormField>
+      {/* maps styled error message */}
       <FormField>
         {errors.map((err) => (
           <Error key={err}>{err}</Error>

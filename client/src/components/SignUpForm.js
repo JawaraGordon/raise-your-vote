@@ -7,7 +7,7 @@ function SignUpForm({ onLogin }) {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [bio, setBio] = useState("");
-  const [age, setAge] = useState();
+  const [age, setAge] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -83,7 +83,7 @@ function SignUpForm({ onLogin }) {
       <FormField>
         <Label htmlFor="bio">Bio</Label>
         <Textarea
-          rows="3"
+          type="text"
           id="bio"
           value={bio}
           onChange={(e) => setBio(e.target.value)}
@@ -92,11 +92,11 @@ function SignUpForm({ onLogin }) {
       <FormField>
         <Label htmlFor="age">Age</Label>
         {/* <Textarea/> */}
-        <input
+        <input className="form-field"
           type="number"
           id="age"
           value={age}
-          onChange={(e) => setAge(e.target.value)}
+          onChange={(e) => setAge(Number(e.target.value))}
           />
         
       </FormField>

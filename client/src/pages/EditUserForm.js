@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { Button, FormField, Label, Wrapper } from "../styles";
 import { useHistory } from 'react-router-dom';
 
-
-function EditUserForm({ userId, onUpdate }) {
+function EditUserForm({ user, setUser, onUpdate }) {
   const [formData, setFormData] = useState({
     id: ' ',
     name: '',
     image_url: '',
-    bio: ''
+    bio: '',
+    age: '',
   });
   const history = useHistory();
-  
 
   useEffect(() => {
-    fetch(`/user/${userId}`)
+    fetch(`/api/user/${user.id}`)
       .then((resp) => resp.json())
       .then((user) => setFormData(user));
-  }, [userId]);
+  }, [user.id]);
 
   function handleChange(e) {
     setFormData((formData) => ({
@@ -28,11 +28,11 @@ function EditUserForm({ userId, onUpdate }) {
   function handleEdit(e) {
     e.preventDefault();
 
-    fetch(`/user/${userId}`, {
+    fetch(`/api/user/${user.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
-        Accepts: 'application/json',
+        Accept: 'application/json',
       },
 
       body: JSON.stringify(formData),
@@ -41,42 +41,70 @@ function EditUserForm({ userId, onUpdate }) {
       .then((updatedUser) => {
         onUpdate(updatedUser);
       });
-    history.push('/home');
+    history.push('/');
   }
 
+  function onUpdate(updatedUser) {
+    setUser(updatedUser);
+   }
+
   return (
+
+   <Wrapper>
+    <div className="container">
     <section>
       <form className="form" autoComplete="off" onSubmit={handleEdit}>
         <h3>Edit Your Info</h3>
-        <label  htmlFor="name">Name</label>
-        <input className="input-text"
+        <Label htmlFor="name">Name</Label>
+        <FormField>
+        <input
+          className="input-text"
           type="text"
           id="name"
           name="name"
           value={formData.name}
           onChange={handleChange}
         />
-        <label htmlFor="image_url">Image Url</label>
-        <input className="input-text"
+        </FormField>
+        
+        <Label htmlFor="image_url">Image Url</Label>
+        <FormField>
+        <input
+          className="input-text"
           id="image_url"
           name="image_url"
           value={formData.image_url}
           onChange={handleChange}
-        />
-        <label htmlFor="bio">Bio</label>
-        <input className="input-text"
+        /></FormField>
+        <Label htmlFor="bio">Bio</Label>
+        <FormField>
+        <input
+          className="input-text"
           type="text"
           id="bio"
           name="bio"
-          value={formData.link}
+          value={formData.bio}
           onChange={handleChange}
         />
-
-        <button onSubmit={handleEdit} type="submit">
-          Update Project
-        </button>
+      </FormField>
+      <Label htmlFor="bio">Age</Label>
+        <FormField>
+        <input
+          className="input-text"
+          type="number"
+          id="age"
+          name="age"
+          value={formData.age}
+          onChange={handleChange}
+        />
+      </FormField>
+        <Button onSubmit={handleEdit} type="submit">
+          Update
+        </Button>
       </form>
     </section>
+    </div>
+    </Wrapper>
   );
 }
 

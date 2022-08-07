@@ -1,5 +1,10 @@
 class BadgesController < ApplicationController
 
+    def create
+        badge = Badge.create(badge_params)
+        render json: badge, status: :created
+      end
+
     def index
         Badge.all
     def
