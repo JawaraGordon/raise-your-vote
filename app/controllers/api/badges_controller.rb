@@ -7,18 +7,20 @@ class Api::BadgesController < ApplicationController
       end
 
     def index
-        Badge.all
+        badges = Badge.all
+        render json: badges, status: :ok
     def
 
     def show 
         badges = Badge.find_by(params[:completed])
+        render json: badges, status: :ok
     end
 end
 
 private 
 
 def badge_params
-    params.permit(:completed, :user_id, :activity_id)
+    params.permit(:completed, :user_id, :activity_id, :name)
     
 end
 end

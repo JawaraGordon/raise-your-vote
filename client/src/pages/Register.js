@@ -5,11 +5,30 @@ import register from "../img/register.png"
 import register2 from "../img/register2.png"
 
 
-function Register() {
+function Register({ user, badge, setBadge, activities, setActivities }) {
 
     const [isChecked, setIsChecked] = useState(false);
-  
-
+    const [completed, setCompleted] = useState(null);
+    
+    function handleClick(e) {
+        e.preventDefault();
+        const userData = {
+             user_id: Number(user.id),
+             activity_id: Number(2),
+             completed: true,
+             name: "MakeAPlan",
+          };
+        fetch("/api/badges", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(userData),
+        }).then((r) => {
+          setCompleted(true)
+          setBadge(true);
+        });
+      }
   return (
     <Wrapper>
         
@@ -32,6 +51,7 @@ function Register() {
         <Label>
       <input
         type="checkbox"
+        onClick={handleClick}
         onChange={() => {
           setIsChecked(!isChecked);
         }}

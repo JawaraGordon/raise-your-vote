@@ -1,21 +1,8 @@
-import React,{ useEffect, useState, useHistory } from "react";
+import React from "react";
 import { Link } from 'react-router-dom';
 import { Button, Wrapper} from "../styles";
 
-function Activities(user) {
-  // const [activities, setActivities] = useState([]);
-  // const history = useHistory();
-
-  // useEffect(() => {
-  //   fetch("/activities")
-  //     .then((r) => r.json())
-  //     .then(setActivities);
-  // }, []);
-  
-  // function handleMakePlan() {
-  //   history.push(`/makeaplan`);
-  // }
-
+function Activities() {
 
   return (
     <>

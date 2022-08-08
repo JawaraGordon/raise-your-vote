@@ -4,9 +4,30 @@ import { Label, Wrapper } from "../styles";
 import getsupplies from "../img/getsupplies.png"
 
 
-function GetSupplies() {
+function GetSupplies({ user, badge, setBadge, activities, setActivities }) {
 
     const [isChecked, setIsChecked] = useState(false);
+    const [completed, setCompleted] = useState(null);
+
+    function handleClick(e) {
+      e.preventDefault();
+      const userData = {
+        user_id: Number(user.id),
+        activity_id: Number(4),
+        completed: true,
+        name: 'MakeAPlan',
+      };
+      fetch('/api/badges', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      }).then((r) => {
+        setCompleted(true);
+        setBadge(true);
+      });
+    }
   
 
   return (
@@ -28,6 +49,7 @@ function GetSupplies() {
         <Label>
       <input
         type="checkbox"
+        onClick={handleClick}
         onChange={() => {
           setIsChecked(!isChecked);
         }}

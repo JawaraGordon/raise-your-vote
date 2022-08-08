@@ -3,9 +3,29 @@ import { Link } from 'react-router-dom';
 import { Label, Wrapper } from '../styles';
 import laststeps from '../img/laststeps.png';
 
-function LastSteps() {
+function LastSteps({ user, badge, setBadge, activities, setActivities }) {
   const [isChecked, setIsChecked] = useState(false);
+  const [completed, setCompleted] = useState(null);
 
+  function handleClick(e) {
+    e.preventDefault();
+    const userData = {
+      user_id: Number(user.id),
+      activity_id: Number(1),
+      completed: true,
+      name: 'MakeAPlan',
+    };
+    fetch('/api/badges', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(userData),
+    }).then((r) => {
+      setCompleted(true);
+      setBadge(true);
+    });
+  }
   return (
     <Wrapper>
       <div className="activity-img">
@@ -31,6 +51,7 @@ function LastSteps() {
         <Label>
           <input
             type="checkbox"
+            onClick={handleClick}
             onChange={() => {
               setIsChecked(!isChecked);
             }}
