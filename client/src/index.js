@@ -23,7 +23,6 @@ const GlobalStyle = createGlobalStyle`
   .logo-small img{
     justify-content: center;
     width: 100%;
-    
     background-size: contain; 
 }
   .container {
@@ -45,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
 .user-button {
     display: flex;
     flex-wrap: wrap;
-    margin: auto;
+    margin: 0, auto;
     padding: auto;
     justify-content: center;
 }
@@ -53,7 +52,7 @@ const GlobalStyle = createGlobalStyle`
 
 .card-title {
   text-align: center;
-  font-size: 20px;
+  font-size: 10vw;
  font-weight: 800;
 }
 
@@ -66,6 +65,8 @@ const GlobalStyle = createGlobalStyle`
 
 .card-text {
   margin: 1rem;
+  text-align: center;
+  font-size: 4vw;
   
 }
 
@@ -119,6 +120,7 @@ input[type="checkbox"] {
   cursor: pointer;
   font-size: 1rem;
   width: auto;
+  /* max-width: 10rem; */
   height: auto;
   border: 1px solid transparent;
   border-radius: 10px;
@@ -134,6 +136,7 @@ input[type="checkbox"] {
   cursor: pointer;
   font-size: 1rem;
   width: auto;
+  /* max-width: 10rem; */
   height: auto;
   border: 1px solid transparent;
   border-radius: 10px;
