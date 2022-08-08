@@ -7,6 +7,8 @@ function MakeAPlan({ user, badge, setBadge, activities, setActivities }) {
   const [isChecked, setIsChecked] = useState(false);
   const [completed, setCompleted] = useState(null);
 
+  console.log(badge)
+
   function handleClick(e) {
     e.preventDefault();
     const userData = {

@@ -6,24 +6,9 @@ import user1 from '../img/user1.png';
 function User({ user }) {
   const history = useHistory();
 
-  // function onDeleteUser(deletedUserId) {
-  //   const filteredUser = user.filter((user) => user.id !== deletedUserId);
-
-  //   setUser(filteredUser);
-  // }
-
   function handleEditUser() {
     history.push(`/users/${user.id}/edit`);
   }
-
-  // const handleDeleteUser = (userId) => {
-  //   fetch(`/user/${userId}`, {
-  //     method: 'DELETE',
-  //     headers: { Accept: 'application/json' },
-  //   });
-  //   onDeleteUser(userId);
-  //   history.push('/home');
-  // };
 
   return (
     <Wrapper>
@@ -45,8 +30,6 @@ function User({ user }) {
 
       <div className="user-button">
         <Button onClick={() => handleEditUser(user.id)}>Edit</Button>
-
-        {/* <Button onClick={() => handleDeleteUser(user.id)}>Delete</Button> */}
       </div>
     </Wrapper>
   );

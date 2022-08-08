@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import NavBar from './NavBar';
 import Login from './Login';
 import Home from './Home';
+import Progress from '../pages/Progress';
 import MakeAPlan from '../pages/MakeAPlan';
 import Register from '../pages/Register';
 import HelpAFriend from '../pages/HelpAFriend';
@@ -44,6 +45,7 @@ function App() {
     });
   }, []);
 
+
   if (!user) return <Login onLogin={setUser} />;
 
   return (
@@ -52,13 +54,22 @@ function App() {
 
       <Switch>
         <Route exact path="/">
-          <Home user={user} />
+          <Home user={user} badge={badge}/>
         </Route>
         <Route path="/users/:id/edit">
           <EditUserForm user={user} setUser={setUser} />
         </Route>
         <Route path="/makeaplan">
           <MakeAPlan
+            user={user}
+            badge={badge}
+            setBadge={setBadge}
+            activities={activities}
+            setActivities={setActivities}
+          />
+        </Route>
+        <Route path="/progress">
+          <Progress
             user={user}
             badge={badge}
             setBadge={setBadge}

@@ -5,20 +5,13 @@ import Activities from "../pages/Activities";
 import User from "../pages/User";
 import Progress from "../pages/Progress";
 import Badges from "../pages/Badges";
-// import EditUserForm from "./EditUserForm";
 
 
 
-function Home({user}) {
-  // const [badge, setBadge] = useState([]);
+
+function Home({user, badge}) {
+
   const history = useHistory();
-
-  // useEffect(() => {
-  //   fetch("/badges")
-  //     .then((r) => r.json())
-  //     .then(setBadge);
-  // }, []);
-
 
   return (
     <Wrapper>
@@ -27,8 +20,7 @@ function Home({user}) {
       <div className="logo-small">
           <User user={user}/>
           </div></Box>
-      {/* <EditUserForm/> */}
-      <Box><Progress/></Box>
+      <Box><Progress badge={badge}/></Box>
       
       <Box><Badges/></Box>
       

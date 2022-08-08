@@ -11,7 +11,7 @@ function LastSteps({ user, badge, setBadge, activities, setActivities }) {
     e.preventDefault();
     const userData = {
       user_id: Number(user.id),
-      activity_id: Number(1),
+      activity_id: Number(7),
       completed: true,
       name: 'MakeAPlan',
     };

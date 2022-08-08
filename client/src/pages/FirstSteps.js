@@ -13,7 +13,7 @@ function FirstSteps({ user, badge, setBadge, activities, setActivities }) {
         e.preventDefault();
         const userData = {
              user_id: Number(user.id),
-             activity_id: Number(3),
+             activity_id: Number(5),
              completed: true,
              name: "MakeAPlan",
           };

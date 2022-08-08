@@ -13,7 +13,7 @@ function GetInvolved({ user, badge, setBadge, activities, setActivities }) {
       e.preventDefault();
       const userData = {
         user_id: Number(user.id),
-        activity_id: Number(1),
+        activity_id: Number(6),
         completed: true,
         name: 'MakeAPlan',
       };
