@@ -14,7 +14,7 @@ function RaiseYourVote({ user, badge, setBadge, activities, setActivities }) {
         user_id: Number(user.id),
         activity_id: Number(8),
         completed: true,
-        name: 'MakeAPlan',
+        name: 'raiseyourvote',
       };
       fetch('/api/badges', {
         method: 'POST',

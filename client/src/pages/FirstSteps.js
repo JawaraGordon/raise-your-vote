@@ -15,7 +15,7 @@ function FirstSteps({ user, badge, setBadge, activities, setActivities }) {
              user_id: Number(user.id),
              activity_id: Number(5),
              completed: true,
-             name: "MakeAPlan",
+             name: "firststeps",
           };
         fetch("/api/badges", {
           method: 'POST',

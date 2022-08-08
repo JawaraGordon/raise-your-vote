@@ -9,7 +9,8 @@ function Login({ onLogin }) {
 
   return (
           
-    <Wrapper>
+    <Wrapper >
+         
       <div className="logo-small">
             <img src={Raise_Your_Vote_Logo} alt="Raise Your Vote logo" />
           </div>
@@ -17,25 +18,31 @@ function Login({ onLogin }) {
         <>
           <LoginForm onLogin={onLogin} />
           
+            <div className="user-button">
           <p>
             Get a free account &nbsp;
             <Button color="secondary" onClick={() => setShowLogin(false)}>
               Sign Up
             </Button> 
           </p>
+            </div>
         </>
       ) : (
         <>
           <SignUpForm onLogin={onLogin} />
           
+          <div className="user-button">
           <p>
             Already have an account? &nbsp;
             <Button color="secondary" onClick={() => setShowLogin(true)}>
               Log In
             </Button>
           </p>
+            </div>
+          
         </>
       )}
+      
     </Wrapper>
   
   );

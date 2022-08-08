@@ -7,15 +7,13 @@ function MakeAPlan({ user, badge, setBadge, activities, setActivities }) {
   const [isChecked, setIsChecked] = useState(false);
   const [completed, setCompleted] = useState(null);
 
-  console.log(badge)
-
   function handleClick(e) {
     e.preventDefault();
     const userData = {
       user_id: Number(user.id),
       activity_id: Number(1),
       completed: true,
-      name: 'MakeAPlan',
+      name: 'makeaplan',
     };
     fetch('/api/badges', {
       method: 'POST',

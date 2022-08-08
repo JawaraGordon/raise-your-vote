@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button, FormField, Input, Label, Wrapper } from '../styles';
 import { useHistory } from 'react-router-dom';
 
-function EditUserForm({ user, setUser, onUpdate }) {
+function EditUserForm({ user, setUser, onLogin }) {
   const [formData, setFormData] = useState({
     id: ' ',
     username: '',
@@ -50,23 +50,7 @@ function EditUserForm({ user, setUser, onUpdate }) {
     setUser(updatedUser);
   }
 
-  const handleDelete = () => {
-    fetch(`/api/user/${user.id}`, {
-      method: 'DELETE',
-      headers: { Accept: 'application/json' },
-    });
-  };
-
-  function confirmAction() {
-    let confirmAction = window.confirm('Are you sure?');
-    if (confirmAction) {
-      alert('Good-Bye');
-      handleDelete(user.id);
-      history.push('/');
-    } else {
-      alert('Welcome Back');
-    }
-  }
+  
 
   return (
     <Wrapper>
@@ -121,7 +105,7 @@ function EditUserForm({ user, setUser, onUpdate }) {
           <Button onSubmit={handleUpdate} type="submit">
             Update
           </Button>
-          <Button onClick={() => confirmAction}>Delete</Button>
+          
           <div className="user-button">
             <Link className="link-primary" to={'/'}>
               Home

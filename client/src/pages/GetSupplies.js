@@ -15,7 +15,7 @@ function GetSupplies({ user, badge, setBadge, activities, setActivities }) {
         user_id: Number(user.id),
         activity_id: Number(4),
         completed: true,
-        name: 'MakeAPlan',
+        name: 'getsupplies',
       };
       fetch('/api/badges', {
         method: 'POST',

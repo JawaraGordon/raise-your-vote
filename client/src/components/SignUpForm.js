@@ -40,6 +40,7 @@ function SignUpForm({ onLogin }) {
   }
 
   return (
+    <div className="user-button">
     <form onSubmit={handleSubmit}>
       <FormField>
         <Label htmlFor="username">Username</Label>
@@ -82,23 +83,22 @@ function SignUpForm({ onLogin }) {
       </FormField>
       <FormField>
         <Label htmlFor="bio">Bio</Label>
-        <Textarea
+        <Input
           type="text"
           id="bio"
           value={bio}
           onChange={(e) => setBio(e.target.value)}
         />
       </FormField>
+      
       <FormField>
         <Label htmlFor="age">Age</Label>
-        {/* <Textarea/> */}
-        <input className="form-field"
+        <Input className="form-field"
           type="number"
           id="age"
           value={age}
           onChange={(e) => setAge(Number(e.target.value))}
           />
-        
       </FormField>
       <FormField>
         <Button type="submit">{isLoading ? "Loading..." : "Sign Up"}</Button>
@@ -109,6 +109,7 @@ function SignUpForm({ onLogin }) {
         ))}
       </FormField>
     </form>
+    </div>
   );
 }
 

@@ -12,7 +12,7 @@ import FirstSteps from '../pages/FirstSteps';
 import GetInvolved from '../pages/GetInvolved';
 import LastSteps from '../pages/LastSteps';
 import RaiseYourVote from '../pages/RaiseYourVote';
-import EditUserForm from '../pages/EditUserForm';
+import EditUserForm from './EditUserForm';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -45,19 +45,20 @@ function App() {
     });
   }, []);
 
-
   if (!user) return <Login onLogin={setUser} />;
 
   return (
     <>
       <NavBar user={user} setUser={setUser} />
-
       <Switch>
         <Route exact path="/">
-          <Home user={user} badge={badge}/>
+          <Home key={user.id} user={user} badge={badge} />
         </Route>
         <Route path="/users/:id/edit">
           <EditUserForm user={user} setUser={setUser} />
+        </Route>
+        <Route path="/login">
+          <Login />
         </Route>
         <Route path="/makeaplan">
           <MakeAPlan
@@ -71,6 +72,7 @@ function App() {
         <Route path="/progress">
           <Progress
             user={user}
+            key={badge.id}
             badge={badge}
             setBadge={setBadge}
             activities={activities}
@@ -87,46 +89,58 @@ function App() {
           />
         </Route>
         <Route path="/helpafriend">
-          <HelpAFriend user={user}
+          <HelpAFriend
+            user={user}
             badge={badge}
             setBadge={setBadge}
             activities={activities}
-            setActivities={setActivities}/>
+            setActivities={setActivities}
+          />
         </Route>
         <Route path="/getsupplies">
-          <GetSupplies user={user}
+          <GetSupplies
+            user={user}
             badge={badge}
             setBadge={setBadge}
             activities={activities}
-            setActivities={setActivities}/>
+            setActivities={setActivities}
+          />
         </Route>
         <Route path="/firststeps">
-          <FirstSteps user={user}
+          <FirstSteps
+            user={user}
             badge={badge}
             setBadge={setBadge}
             activities={activities}
-            setActivities={setActivities}/>
+            setActivities={setActivities}
+          />
         </Route>
         <Route path="/getinvolved">
-          <GetInvolved user={user}
+          <GetInvolved
+            user={user}
             badge={badge}
             setBadge={setBadge}
             activities={activities}
-            setActivities={setActivities}/>
+            setActivities={setActivities}
+          />
         </Route>
         <Route path="/laststeps">
-          <LastSteps user={user}
+          <LastSteps
+            user={user}
             badge={badge}
             setBadge={setBadge}
             activities={activities}
-            setActivities={setActivities}/>
+            setActivities={setActivities}
+          />
         </Route>
         <Route path="/raiseyourvote">
-          <RaiseYourVote user={user}
+          <RaiseYourVote
+            user={user}
             badge={badge}
             setBadge={setBadge}
             activities={activities}
-            setActivities={setActivities}/>
+            setActivities={setActivities}
+          />
         </Route>
       </Switch>
     </>

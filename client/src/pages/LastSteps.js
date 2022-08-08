@@ -13,7 +13,7 @@ function LastSteps({ user, badge, setBadge, activities, setActivities }) {
       user_id: Number(user.id),
       activity_id: Number(7),
       completed: true,
-      name: 'MakeAPlan',
+      name: 'laststeps',
     };
     fetch('/api/badges', {
       method: 'POST',

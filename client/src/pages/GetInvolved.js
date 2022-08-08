@@ -15,7 +15,7 @@ function GetInvolved({ user, badge, setBadge, activities, setActivities }) {
         user_id: Number(user.id),
         activity_id: Number(6),
         completed: true,
-        name: 'MakeAPlan',
+        name: 'getinvolved',
       };
       fetch('/api/badges', {
         method: 'POST',

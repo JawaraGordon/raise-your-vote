@@ -27,11 +27,10 @@ function LoginForm({ onLogin }) {
     });
   }
 
-
-
   return (
     <Wrapper>
-    <form className="user-button" onSubmit={handleSubmit}>
+      <div className="user-button">
+    <form onSubmit={handleSubmit}>
       <FormField>
         <Label htmlFor="username">Username</Label>
         <Input
@@ -68,6 +67,7 @@ function LoginForm({ onLogin }) {
         ))}
       </FormField>
     </form>
+    </div>
     </Wrapper>
   );
 }

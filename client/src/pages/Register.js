@@ -16,7 +16,7 @@ function Register({ user, badge, setBadge, activities, setActivities }) {
              user_id: Number(user.id),
              activity_id: Number(2),
              completed: true,
-             name: "MakeAPlan",
+             name: "register",
           };
         fetch("/api/badges", {
           method: 'POST',
