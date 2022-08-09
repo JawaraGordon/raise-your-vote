@@ -32,9 +32,9 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
   - Find your poll map
   - Volunteer for an event pledge
 
-### How to Install Project
+### Project Repo
 
-- Fork and clone both the "raiseyourvote" repo from GitHub [here] https://github.com/JawaraGordon/raise-your-vote
+- GitHub [here] https://github.com/JawaraGordon/raise-your-vote
 
 # Navigating the application
 
@@ -150,13 +150,12 @@ Windows Instructions [here](https://devcenter.heroku.com/articles/getting-starte
 $ brew tap heroku/brew && brew install heroku
 
 $ heroku login
-
 ```
 
+```
 $ rvm install 3.1.2 --default
 $ gem install bundler
 $ gem install rails
-
 ```
 
 Heroku requires Postgresql add 'pg gem' to Gemfile.
@@ -164,15 +163,12 @@ Heroku requires Postgresql add 'pg gem' to Gemfile.
 //Gemfile
 gem "pg", "~> 1.1"
 
-
 Install Postgres.
 
 ```
-
 $ brew install postgresql
 
 $ brew services start postgresql
-
 ```
 
 ## Rails App
@@ -184,14 +180,15 @@ Tell the app to use PostgreSQL.
 ```
 
 $ rails new your-project-name --api --minimal --database=postgresql
+```
 
 ## This will configure our gemfile.lock to work with the same OS Heroku uses:
 
-$ bundle lock --add-platform x86_64-linux --add-platform ruby
-
-#Build the app as normal
-
 ```
+$ bundle lock --add-platform x86_64-linux --add-platform ruby
+```
+
+# Build the app as normal
 
 ## React App
 
@@ -200,8 +197,8 @@ Configure React to work in Rails production environment.
 From the root directory:
 
 ```
-
 npm install --prefix client
+```
 
 ### Create a Procfile in the root of your directory.
 
@@ -217,11 +214,15 @@ api: PORT=3000 bundle exec rails s
 
 ### Create a React APP that is being served from Rails
 
+```
 $ npm run build --prefix client
+```
 
 ### Move the these files to public:
 
+```
 mv client/build/\* public
+```
 
 ### Configure client side routing
 
@@ -231,7 +232,9 @@ get "\*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.form
 
 ### terminal
 
+```
 $ rails g controller fallback_controller
+```
 
 ### app/controllers/fallback_controller.rb
 
@@ -241,17 +244,11 @@ render file: 'public/index.html'
 end
 end
 
-```
-
 ## Deploy
-
-```
 
 ### Add a package.json to the root of your Rails app:
 
 Add this code:
-
-```
 
 ```
 
@@ -271,7 +268,6 @@ Add this code:
 
 ```
 
-
 ```
 
 $ heroku create
@@ -284,21 +280,28 @@ $ heroku buildpacks:add heroku/ruby --index 2
 
 $ git push heroku main
 
+```
+
 ### seed and migrate
 
+```
 $ heroku run rails db:migrate db:seed
+```
 
 ### open your heroku app
+
+```
 $ heroku open
+```
 
 ### See the url that your app is being hosted at
 
+```
 $ git config --list --local | grep heroku
+```
 
 ### run heroku locally
 
-heroku local -f Procfile.dev
-
 ```
-
+heroku local -f Procfile.dev
 ```
