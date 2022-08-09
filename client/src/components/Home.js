@@ -7,7 +7,7 @@ import Badges from "../pages/Badges";
 
 
 
-function Home({user, badge}) {
+function Home({user,badge}) {
 
 
 

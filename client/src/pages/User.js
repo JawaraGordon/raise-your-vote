@@ -3,10 +3,10 @@ import { Button, Wrapper } from '../styles';
 import user1 from '../img/user1.png';
 import user2 from '../img/user2.png';
 
-function User({ user, setUser }) {
+function User({ user }) {
   const history = useHistory();
 
-  const {username, image_url, bio, age} = user
+  const { id, username, image_url, bio, age } = user;
 
   function handleEditUser() {
     history.push(`/users/${user.id}/edit`);
@@ -23,7 +23,7 @@ function User({ user, setUser }) {
   function confirmAction() {
     let confirmAction = window.confirm('Are you sure?');
     if (confirmAction) {
-      alert("See you at the polls");
+      alert('See you at the polls');
       handleDelete(user.id);
     } else {
       alert('Welcome Back!');
@@ -37,8 +37,6 @@ function User({ user, setUser }) {
           <h2>{username}</h2>
         </div>
         <div className="card-img">
-          {user.id === 3 ? (<img src={user1} alt="user" />) : " "}
-          {user.id === 4 ? (<img src={user2} alt="user" />) : " "}
           <img src={image_url} alt="user" />
         </div>
         <div className="card-text">
@@ -52,7 +50,7 @@ function User({ user, setUser }) {
 
       <div className="user-button">
         <Button onClick={() => handleEditUser(user.id)}>Edit</Button>
-      <Button onClick={() => confirmAction(user.id)}>Delete</Button>
+        <Button onClick={() => confirmAction(user.id)}>Delete</Button>
       </div>
     </Wrapper>
   );
