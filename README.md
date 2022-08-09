@@ -140,11 +140,11 @@ Node version
 
 - Windows 10+
 
-### Using Heroku
+## Using Heroku
 
 Windows Instructions [here](https://devcenter.heroku.com/articles/getting-started-with-jruby)
 
-## macOS
+### macOS
 
 ```
 $ brew tap heroku/brew && brew install heroku
@@ -175,7 +175,7 @@ $ brew services start postgresql
 
 ```
 
-### Rails App
+## Rails App
 
 Initiate a new git repository inside of your project directory using `git init`
 
@@ -193,7 +193,7 @@ $ bundle lock --add-platform x86_64-linux --add-platform ruby
 
 ```
 
-### React App
+## React App
 
 Configure React to work in Rails production environment.
 
@@ -203,37 +203,37 @@ From the root directory:
 
 npm install --prefix client
 
-## Create a Procfile in the root of your directory.
+### Create a Procfile in the root of your directory.
 
 Add this code:
 
 web: bundle exec rails s
 release: bin/rake db:migrate
 
-## Create a Procfile.dev in the root of your directory with the following:
+### Create a Procfile.dev in the root of your directory with the following:
 
 web: PORT=4000 npm start --prefix client
 api: PORT=3000 bundle exec rails s
 
-## Create a React APP that is being served from Rails
+### Create a React APP that is being served from Rails
 
 $ npm run build --prefix client
 
-## Move the these files to public:
+### Move the these files to public:
 
 mv client/build/\* public
 
-## Configure client side routing
+### Configure client side routing
 
-## routes.rb
+### routes.rb
 
 get "\*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 
-## terminal
+### terminal
 
 $ rails g controller fallback_controller
 
-## app/controllers/fallback_controller.rb
+### app/controllers/fallback_controller.rb
 
 class FallbackController < ActionController::Base
 def index
@@ -247,7 +247,7 @@ end
 
 ```
 
-## Add a package.json to the root of your Rails app:
+### Add a package.json to the root of your Rails app:
 
 Add this code:
 
@@ -284,18 +284,18 @@ $ heroku buildpacks:add heroku/ruby --index 2
 
 $ git push heroku main
 
-## seed and migrate
+### seed and migrate
 
 $ heroku run rails db:migrate db:seed
 
-#open your heroku app
+### open your heroku app
 $ heroku open
 
-## See the url that your app is being hosted at
+### See the url that your app is being hosted at
 
 $ git config --list --local | grep heroku
 
-# run heroku locally
+### run heroku locally
 
 heroku local -f Procfile.dev
 
