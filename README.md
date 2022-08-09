@@ -2,14 +2,13 @@
 
 # Raise Your Vote
 
-A non-partisan web app that educates users about voting! 
+A non-partisan web app that educates users about voting!
 
-Earn badges, track your progress and compete with friends to earn your spot on the leader board. 
-
+Earn badges, track your progress and compete with friends to earn your spot on the leader board.
 
 ## Description
 
-A fullstack web application that uses a React front-end, a Ruby on Rails back-end and a PostgresQL database. 
+A fullstack web application that uses a React front-end, a Ruby on Rails back-end and a PostgresQL database.
 
 ## Challenges
 
@@ -17,22 +16,21 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 
 - Using full CRUD actions on the user model.
 
-- Client-side routing that works in unison with server side custom routes. 
+- Client-side routing that works in unison with server side custom routes.
 
 - Authentication/authorization using a session hash to allow user login status to persist. Using the Bcrypt gem to generate salted password hashes stored on a password_digest data table.
 
 - Using ActiveRecord methods with strong params, built in security features and serialization.
 
-- Learning to use React Styled Components 
+- Learning to use React Styled Components
 
-- In the future I want to add: 
-    - Calendar of important dates     
-    - Leaderboard 
-    - Which party represents you quiz
-    - Day-of voting checklist 
-    - Find your poll map
-    - Volunteer for an event pledge
-
+- In the future I want to add:
+  - Calendar of important dates
+  - Leaderboard
+  - Which party represents you quiz
+  - Day-of voting checklist
+  - Find your poll map
+  - Volunteer for an event pledge
 
 ### How to Install Project
 
@@ -42,15 +40,15 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 
 - Create a new user or login with an existing account
 
-- Logout with the top-right navbar button 
+- Logout with the top-right navbar button
 
 - Edit or Delete your User profile from the home screen
 
 - View your progress bar and badges by scrolling down the home screen
 
-- Get more information about Activities by clicking on the individually named Activity buttons 
+- Get more information about Activities by clicking on the individually named Activity buttons
 
-- Each Activity button will navigate to a new component screen. You can click the "learn more" button to go to an external link about the topic. Check the checkbox to save your progress to the database as completed. Click the "home" button to go back to the main page. 
+- Each Activity button will navigate to a new component screen. You can click the "learn more" button to go to an external link about the topic. Check the checkbox to save your progress to the database as completed. Click the "home" button to go back to the main page.
 
 ## Setup
 
@@ -104,7 +102,7 @@ A fullstack web application that uses a React front-end, a Ruby on Rails back-en
 import { BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
- Imports `BrowserRouter` component from React Router, wraps `App` as the top level component.
+Imports `BrowserRouter` component from React Router, wraps `App` as the top level component.
 
 ## Resources
 
@@ -113,38 +111,38 @@ import { createGlobalStyle } from 'styled-components';
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 [dbdiagram.io]: https://dbdiagram.io/
-
 [postman download]: https://www.postman.com/downloads/
-
 [network tab]: https://developer.chrome.com/docs/devtools/network/
 
-* React version
-18.2.0
+- React version
+  18.2.0
 
-* Ruby version
-3.1.2
+- Ruby version
+  3.1.2
 
-* Rails version
-7.0.3.1
+- Rails version
+  7.0.3.1
 
-Node version 
-* v18.7.0
+Node version
 
-* Database 
-(PostgreSQL) 14.4
+- v18.7.0
 
-* System dependencies
-macOS 10+
-Homebrew
-npm
-rvm
+- Database
+  (PostgreSQL) 14.4
 
-Windows 10+
+- System dependencies
 
+* Homebrew
+* npm
+* rvm
 
-### Using Heroku 
+- macOS 10+
 
-Windows Instructions [here](https://devcenter.heroku.com/articles/getting-started-with-jruby) 
+- Windows 10+
+
+### Using Heroku
+
+Windows Instructions [here](https://devcenter.heroku.com/articles/getting-started-with-jruby)
 
 ## macOS
 
@@ -154,13 +152,14 @@ $ brew tap heroku/brew && brew install heroku
 $ heroku login
 
 ```
- $ rvm install 3.1.2 --default
- $ gem install bundler
- $ gem install rails
+
+$ rvm install 3.1.2 --default
+$ gem install bundler
+$ gem install rails
 
 ```
 
-Heroku requires Postgresql add 'pg gem' to Gemfile. 
+Heroku requires Postgresql add 'pg gem' to Gemfile.
 
 //Gemfile
 gem "pg", "~> 1.1"
@@ -169,6 +168,7 @@ gem "pg", "~> 1.1"
 Install Postgres.
 
 ```
+
 $ brew install postgresql
 
 $ brew services start postgresql
@@ -179,16 +179,18 @@ $ brew services start postgresql
 
 Initiate a new git repository inside of your project directory using `git init`
 
-Tell the app to use PostgreSQL. 
+Tell the app to use PostgreSQL.
 
 ```
- $ rails new your-project-name --api --minimal --database=postgresql
 
-# This will configure our gemfile.lock to work with the same OS Heroku uses:
- 
- $ bundle lock --add-platform x86_64-linux --add-platform ruby
+$ rails new your-project-name --api --minimal --database=postgresql
 
-#Build the app as normal 
+## This will configure our gemfile.lock to work with the same OS Heroku uses:
+
+$ bundle lock --add-platform x86_64-linux --add-platform ruby
+
+#Build the app as normal
+
 ```
 
 ### React App
@@ -198,72 +200,80 @@ Configure React to work in Rails production environment.
 From the root directory:
 
 ```
- npm install --prefix client
 
-# Create a Procfile in the root of your directory. 
+npm install --prefix client
+
+## Create a Procfile in the root of your directory.
 
 Add this code:
 
 web: bundle exec rails s
 release: bin/rake db:migrate
 
-# Create a Procfile.dev in the root of your directory with the following:
+## Create a Procfile.dev in the root of your directory with the following:
 
 web: PORT=4000 npm start --prefix client
 api: PORT=3000 bundle exec rails s
 
+## Create a React APP that is being served from Rails
 
- # Create a React APP that is being served from Rails
- $ npm run build --prefix client
+$ npm run build --prefix client
 
- # Move the these files to public: 
+## Move the these files to public:
 
-  mv client/build/* public
+mv client/build/\* public
 
-# Configure client side routing
+## Configure client side routing
 
-# routes.rb
-  get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
+## routes.rb
 
-# terminal 
-  $ rails g controller fallback_controller
+get "\*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 
-# app/controllers/fallback_controller.rb
+## terminal
+
+$ rails g controller fallback_controller
+
+## app/controllers/fallback_controller.rb
+
 class FallbackController < ActionController::Base
-  def index
-    render file: 'public/index.html'
-  end
+def index
+render file: 'public/index.html'
+end
 end
 
+```
+
+## Deploy
 
 ```
 
-## Deploy 
-
-``` 
-# Add a package.json to the root of your Rails app:
+## Add a package.json to the root of your Rails app:
 
 Add this code:
+
 ```
 
 ```
+
 {
-    "name": "heroku-deploy",
-    "description": "Build scripts for Heroku",
-    "engines": {
-      "node": "15.6.0"
-    },
-    "scripts": {
-      "clean": "rm -rf public",
-      "build": "npm install --prefix client && npm run build --prefix client",
-      "deploy": "cp -a client/build/. public/",
-      "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
-    }
-  }
+"name": "heroku-deploy",
+"description": "Build scripts for Heroku",
+"engines": {
+"node": "15.6.0"
+},
+"scripts": {
+"clean": "rm -rf public",
+"build": "npm install --prefix client && npm run build --prefix client",
+"deploy": "cp -a client/build/. public/",
+"heroku-postbuild": "npm run clean && npm run build && npm run deploy"
+}
+}
+
 ```
 
 
 ```
+
 $ heroku create
 
 $ git add .
@@ -274,17 +284,21 @@ $ heroku buildpacks:add heroku/ruby --index 2
 
 $ git push heroku main
 
-# seed and migrate
+## seed and migrate
+
 $ heroku run rails db:migrate db:seed
 
-#open your heroku app 
+#open your heroku app
 $ heroku open
 
-# See the url that your app is being hosted at
+## See the url that your app is being hosted at
+
 $ git config --list --local | grep heroku
 
 # run heroku locally
- heroku local -f Procfile.dev
+
+heroku local -f Procfile.dev
 
 ```
 
+```
