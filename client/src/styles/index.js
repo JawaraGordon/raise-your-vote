@@ -10,6 +10,8 @@ import LogoImg from "./LogoImg";
 import Nav from "./Nav";
 import Wrapper from "./Wrapper";
 import NavWrapper from "./NavWrapper";
+import ProgressBarContainer from "./ProgressBarContainer";
+import ProgressBarLabel from "./ProgressBarLabel";
 
 
-export { Box, Button, Error, FormField, Input, Label, Logo, LogoImg, Nav, Textarea,NavWrapper, Wrapper };
+export { Box, Button, Error, FormField, Input, Label, Logo, LogoImg, Nav, ProgressBarContainer, ProgressBarLabel, Textarea,NavWrapper, Wrapper };
