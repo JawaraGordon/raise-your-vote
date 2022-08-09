@@ -118,11 +118,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [network tab]: https://developer.chrome.com/docs/devtools/network/
 
+* React version
+18.2.0
+
 * Ruby version
 3.1.2
 
-* React version
-18.2.0
+* Rails version
+7.0.3.1
+
+Node version 
+* v18.7.0
 
 * Database 
 (PostgreSQL) 14.4
@@ -146,8 +152,6 @@ Windows Instructions [here](https://devcenter.heroku.com/articles/getting-starte
 $ brew tap heroku/brew && brew install heroku
 
 $ heroku login
-
-```
 
 ```
  $ rvm install 3.1.2 --default
