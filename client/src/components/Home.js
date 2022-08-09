@@ -6,59 +6,33 @@ import Progress from '../pages/Progress';
 import Badges from '../pages/Badges';
 
 function Home({ user, badge }) {
-  // returns badge name array
-  // const badgeList = badge.map(badge => {
-  //     return {[badge.id] : badge.name}})
-
   const [badges, setBadges] = useState(null);
 
   // return badge name object
-  const badgeList = badge.map((badge) => ({
-    name: badge.name,
-  }));
+
+  // const badgeList = badge.map((badge) => ({
+  //   name: badge.name,
+  // }));
 
   // spread name array to object
-  const badgeNameList = { ...badgeList };
+  // const badgeNameList = { ...badgeList };
+
+  //creates a random number for progress bar
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+  }
 
   // change state to integer based on object key + value string
   useEffect(() => {
-    badgeNameList === { name: 'makeaplan' } ? setBadges(12) : setBadges(0);
+    // badgeNameList === { name: 'makeaplan' } ? setBadges(12) : setBadges(getRandomInt(12,100));
+    setBadges(getRandomInt(12, 100));
   }, []);
 
-  console.log(badgeNameList);
-  // console.log(badgeName)
-
-  // function progressBar(badge) {
-  // console.log(badge)
-
-  // function progressBar (name) {
-  //   console.log(name)
-  //   if (name === 'makeaplan') {
-  //     setBadges(1) }}
-
-  // } else if (badgeName === 'makeaplan' && 'register') {
-  //   <img src={require('../img/progress_bar2.png')} />;
-  // } else if (badgeName === 'makeaplan' && 'register') {
-  //   <img src={require('../img/progress_bar3.png')} />;
-  // } else if (badgeName === 'makeaplan' && 'register') {
-  //   <img src={require('../img/progress_bar4.png')} />;
-  // } else if (badgeName === 'makeaplan' && 'register') {
-  //   <img src={require('../img/progress_bar5.png')} />;
-  // } else if (badgeName === 'makeaplan' && 'register') {
-  //   <img src={require('../img/progress_bar6.png')} />;
-  // } else if (badgeName === 'makeaplan' && 'register') {
-  //   <img src={require('../img/progress_bar7.png')} />;
-  // } else if (badgeName === 'makeaplan' && 'register') {
-  //   <img src={require('../img/progress_bar8.png')} />;
-  // } else if (badgeName === 'makeaplan' && 'register') {
-  //   <img src={require('../img/progress_bar9.png')} />;
-  // }
+  // console.log(badgeNameList);
 
   const badgeData = [{ bgcolor: '#44ab7a', completed: badges }];
-
-  // console.log(badgeList)
-  // progressBar(badgeNameList)
-  // console.log(badges)
 
   return (
     <Wrapper>

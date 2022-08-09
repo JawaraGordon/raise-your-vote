@@ -1,7 +1,5 @@
 import { useHistory } from 'react-router';
 import { Button, Wrapper } from '../styles';
-import user1 from '../img/user1.png';
-import user2 from '../img/user2.png';
 
 function User({ user }) {
   const history = useHistory();

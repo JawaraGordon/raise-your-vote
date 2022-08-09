@@ -1,19 +1,16 @@
-import React,{ useEffect, useState } from "react";
-import ReactMarkdown from "react-markdown";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { Box, Button, LogoImg, Wrapper } from "../styles";
-import badges from "../img/badges.png";
+import React from 'react';
+import { Wrapper } from '../styles';
+import badges from '../img/badges.png';
 
 function Badges() {
-
   return (
     <Wrapper>
       <h2>Badges</h2>
       <div className="logo-small">
-            <img src={badges} alt="badges" />
-          </div>
-          {/* <ul>
+        <img src={badges} alt="badges" />
+      </div>
+      {/* dynamically generate badge list */}
+      {/* <ul>
         {badges.map((badge) => (
           <li key={badge.id}>
             <span>
@@ -25,7 +22,5 @@ function Badges() {
     </Wrapper>
   );
 }
-
-
 
 export default Badges;

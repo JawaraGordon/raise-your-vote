@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { Button, Wrapper} from "../styles";
+import { Wrapper} from "../styles";
 
 function Activities() {
 
   return (
     <>
-    
+    <Wrapper>
         <div className="logo-small">
       <h2>Activities</h2>
       <div  className="container">
@@ -20,6 +20,7 @@ function Activities() {
         <Link to="/raiseyourvote" className="link-primary" >Raise Your Vote</Link>
         </div>
         </div>
+        </Wrapper>
       
       </>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Label, Wrapper } from '../styles';
 import makeaplan from '../img/makeaplan.png';
@@ -24,6 +24,7 @@ function MakeAPlan({ user, badge, setBadge, activities, setActivities }) {
     }).then((r) => {
       setCompleted(true);
       setBadge(true);
+      
     });
   }
 
