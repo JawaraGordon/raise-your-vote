@@ -16,7 +16,6 @@ import EditUserForm from './EditUserForm';
 
 function App() {
   const [user, setUser] = useState(null);
-  const [userId, setUserId] = useState(null);
   const [badge, setBadge] = useState([]);
   const [activities, setActivities] = useState([]);
 
@@ -55,7 +54,7 @@ function App() {
       <NavBar user={user} setUser={setUser} />
       <Switch>
         <Route exact path="/">
-          <Home key={user.id} user={user} setUserId={setUserId} badge={badge} />
+          <Home key={user.id} user={user} badge={badge} />
         </Route>
         <Route path="/users/:id/edit">
           <EditUserForm user={user} setUser={setUser} />
